@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --roboto: 'Roboto', sans-serif;
+    --inter: 'Inter', sans-serif;
+    --fjalla: 'Fjalla One', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* NAVBAR */
+.navbar-info {
+    position: relative;
+    width: 100%;
+    height: 700px;
+
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        /* overlay oscuro */
+        url("./../assets/images/fondo.jpg") no-repeat center center / cover;
+
+    color: white;
+}
+nav {
+    width: 100%;
+    height: 70px;
+    padding: 15px;
+    /* padding-top: 40px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.886), rgba(0, 0, 0, 0));
+}
+nav a img {
+    margin-top: 20px;
+    margin-right: 55px;
+    width: 130px;
+    /* logo más grande */
+}
+.login-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    padding: 50px;
+    background: rgba(0, 0, 0, 0.674);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+.login-container h2 {
+    text-align: start;
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+}
+.input-group {
+    margin: 15px 0;
+    position: relative;
+    width: 100%;
+}
+.input-group input {
+    background-color: rgba(0, 0, 0, 0.45);
+    width: 100%;
+    padding: 15px;
+    border: 1px solid rgb(91, 91, 91);
+    border-radius: 5px;
+    font-size: 16px;
+    color: white;
+}
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #aaa;
+    font-size: 16px;
+    pointer-events: none;
+    /* no interfiere con el click */
+    transition: 0.2s ease all;
+}
+.input-group input:focus+label,
+.input-group input:not(:placeholder-shown)+label {
+    top: 11px;
+    left: 10px;
+    font-size: 11px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.45);
+    padding: 0 5px;
+    border-radius: 3px;
+}
+.login-container .login-button {
+    background-color: #E50914;
+    border: none;
+    padding: 16px;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+/* CHECKBOX */
+/* Contenedor general */
+.checkbox-container {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  color: #fff; /* cambia según tu fondo */
+  gap: 8px;
+  position: relative;
+  margin-top: 10px;
+}
+/* Ocultar el checkbox nativo */
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Estilo del cuadrado */
+.checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #aaa;
+    border-radius: 4px;
+    background-color: transparent;
+    display: inline-block;
+    transition: all 0.2s ease-in-out;
+    margin-top: 10px;
+}
+
+/* Cuando está marcado */
+.checkbox-container input:checked ~ .checkmark {
+    background-color: #e50914; /* rojo Netflix */
+    border-color: #e50914;
+}
+/* Efecto de palomita */
+.checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.checkbox-container input:checked ~ .checkmark::after {
+    display: block;
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.signup-link {
+    width: 100%;
+    display: flex;
+    justify-self: start;
+    color: #aaa;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0;
+}
+.signup-link a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+.captcha-info {
+    font-size: 11px;
+    color: #aaa;
+    margin-top: 15px;
+    line-height: 1.4;
+    text-align: center;
+}
+
+/* FOOTER */
+footer {
+  background-color: #141414;
+  color: #757575;
+  padding: 40px 20px;
+  font-size: 14px;
+}
+
+.footer-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-content p {
+  margin-bottom: 20px;
+}
+
+.footer-content a {
+  color: #757575;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-content a:hover {
+  text-decoration: underline;
+}
+
+/* LINKS EN GRID */
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+/* SELECTOR DE IDIOMA */
+.language-selector {
+  margin-bottom: 20px;
+}
+
+.language-selector label {
+  margin-right: 8px;
+}
+
+.language-selector select {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #333;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* NOTA FINAL */
+.footer-note {
+  font-size: 13px;
+  color: #757575;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  footer {
+    text-align: center;
+  }
+
+  .footer-links {
+    grid-template-columns: 1fr;
+  }
+
+  .language-selector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .language-selector label {
+    margin-bottom: 6px;
+  }
+}

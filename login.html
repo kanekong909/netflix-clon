@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <link rel="shortcut icon" href="./assets/images/netflix_symbol2.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <div class="navbar-info">
+        <!-- Nabvar -->
+        <nav>
+            <a href="/"><img src="./assets/images/netflix_logo.png" alt="Netflix Logo""></a>
+        </nav>
+
+         <!-- LOGIN FORM -->
+        <div class=" login-container">
+            <form class="login-form" action="#" method="POST">
+                <h2>Iniciar sesión</h2>
+                <div class="input-group">
+                    <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" name="password" placeholder="Contraseña" required>
+                </div>
+                <button type="submit" class="login-button">Iniciar sesión</button>
+                <div class="options">
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="remember">
+                        <span class="checkmark"></span>
+                        Recuérdame
+                    </label>
+                </div>
+                <div class="signup-link">
+                    ¿Primera vez en Netflix? <a href="registro.html">Suscríbete ya</a>.
+                </div>
+                <div class="captcha-info">
+                    Esta página está protegida por Google reCAPTCHA para comprobar que no eres un robot.
+                    <a href="#">Más info.</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <p>¿Preguntas? Llama al <a href="tel:018004588888">0180-045-8888</a></p>
+            <div class="footer-links">
+                <a href="#">Preguntas frecuentes</a>
+                <a href="#">Centro de ayuda</a>
+                <a href="#">Términos de uso</a>
+                <a href="#">Privacidad</a>
+                <a href="#">Preferencias de cookies</a>
+                <a href="#">Información corporativa</a>
+                <a href="#">Avisos legales</a>
+                <a href="#">Contáctanos</a>
+            </div>
+            <!-- <div class="language-selector">
+                <label for="language">Idioma:</label>
+                <select id="language" name="language">
+                    <option value="es" selected>Español</option>
+                    <option value="en">Inglés</option>
+                    <option value="fr">Francés</option>
+                    <option value="de">Alemán</option>
+                    <option value="it">Italiano</option>
+                </select>
+            </div> -->
+            <p class="footer-note">Netflix Colombia</p>
+        </div>
+    </footer>
+</body>
+</html>
