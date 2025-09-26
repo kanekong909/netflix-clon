@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
     --roboto: 'Roboto', sans-serif;
+    --inter: 'Inter', sans-serif;
+    --fjalla: 'Fjalla One', sans-serif;
 }
 
 * {
@@ -40,6 +44,13 @@ nav {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.886), rgba(0, 0, 0, 0));
 }
 
+nav a img {
+    margin-top: 20px;
+    margin-right: 55px;
+    width: 130px;
+    /* logo más grande */
+}
+
 .language-select {
     margin-top: 15px;
     appearance: none;
@@ -65,6 +76,7 @@ nav {
 
 /* TRANSLATE LOGIN */
 .translate-login {
+    margin-top: 15px;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -113,6 +125,7 @@ p {
     position: relative;
     width: 100%;
 }
+
 .input-group input {
     background-color: rgba(0, 0, 0, 0.45);
     width: 100%;
@@ -122,6 +135,7 @@ p {
     font-size: 16px;
     color: white;
 }
+
 .input-group label {
     position: absolute;
     top: 50%;
@@ -133,6 +147,7 @@ p {
     /* no interfiere con el click */
     transition: 0.2s ease all;
 }
+
 .input-group input:focus+label,
 .input-group input:not(:placeholder-shown)+label {
     top: 11px;
@@ -143,6 +158,7 @@ p {
     padding: 0 5px;
     border-radius: 3px;
 }
+
 .input-email-btn-comenzar button {
     background-color: #E50914;
     border: none;
@@ -163,6 +179,7 @@ p {
     background: #000;
     overflow: hidden;
 }
+
 .curve-container::before {
     content: "";
     position: absolute;
@@ -181,7 +198,6 @@ p {
     clip-path: ellipse(100% 100% at 50% 80%);
 }
 
-
 /* TRENDING */
 .trending {
     padding: 25px;
@@ -194,6 +210,7 @@ p {
     font-size: 19px;
     font-weight: bold;
 }
+
 .slider-container {
     overflow-x: auto;
     overflow-y: hidden;
@@ -205,9 +222,11 @@ p {
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
+
 .slider-container::-webkit-scrollbar {
     display: none;
 }
+
 .slider {
     display: flex;
     gap: 15px;
@@ -216,7 +235,9 @@ p {
     margin: 0;
     align-items: flex-start;
 }
+
 .slider li {
+    cursor: pointer;
     flex: 0 0 auto;
     width: 150px;
     scroll-snap-align: start;
@@ -225,6 +246,7 @@ p {
     overflow: visible;
     /* deja que el número se salga */
 }
+
 .slider img {
     width: 100%;
     /* 👈 cámbialo de 80% a 100% */
@@ -314,7 +336,8 @@ p {
 /* PREGUNTAS FRECUENTES */
 .faq {
     background-color: #000;
-    width: 100%;;
+    width: 100%;
+    ;
     /* margin: 40px auto; */
     color: #fff;
     font-family: Arial, sans-serif;
@@ -468,39 +491,256 @@ p {
     text-decoration: underline;
 }
 
+/* MODAL | POPUP */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    position: relative;
+    width: 90vw;
+    max-width: 600px;
+    max-height: 90vh;
+    background: #181818;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.8);
+    animation: modalSlide 0.3s ease;
+}
+
+/* Overlay gradient sobre la imagen */
+.modal-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 300px;
+    background: linear-gradient(180deg,
+            transparent 0%,
+            transparent 40%,
+            rgba(24, 24, 24, 0.6) 70%,
+            rgba(24, 24, 24, 0.95) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+.close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    background: rgba(0, 0, 0, 0.8);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+.close-btn:hover {
+    background: rgba(0, 0, 0, 0.95);
+    transform: scale(1.1);
+}
+
+.modal-body {
+    position: relative;
+    padding: 32px;
+    margin-top: -80px;
+    z-index: 2;
+}
+.modal-body h2 {
+    font-size: 45px;
+    font-weight: 700;
+    font-family: var(--fjalla);
+    margin-bottom: 19px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.tags {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+.tag {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+}
+
+.modal-body p {
+    font-size: 13px;
+    /* line-height: 1.6; */
+    color: rgba(255, 255, 255, 0.85);
+}
+.modal-body button {
+    background: #e50914;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    width: 100%;
+    justify-content: center;
+    letter-spacing: 0.5px;
+}
+.modal-body button:hover {
+    background: #f40612;
+    transform: translateY(-1px);
+}
+.modal-body button:active {
+    transform: translateY(0);
+}
+
+.open-modal-btn {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px;
+}
+.open-modal-btn:hover {
+    background: #555;
+}
+
+@keyframes modalSlide {
+    from {
+        transform: scale(0.9) translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-content img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    position: relative;
+}
+
+
 /* Tablets en orientación vertical y horizontal */
-@media (max-width: 768px)  {
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95vw;
+        margin: 20px;
+    }
+
+    .modal-body {
+        padding: 24px;
+        margin-top: -60px;
+    }
+
+    .modal-body h2 {
+        font-size: 28px;
+    }
+
+    .modal-content img {
+        height: 250px;
+    }
+
     nav {
         justify-content: space-around;
     }
 
     .input-email-btn-comenzar {
         flex-direction: row;
-        justify-content: center; /* centra el conjunto */
+        justify-content: center;
+        /* centra el conjunto */
         gap: 15px;
-        align-items: flex-start; /* alinea input y botón arriba */
+        align-items: flex-start;
+        /* alinea input y botón arriba */
     }
 
     .input-group {
-        width: 40%; /* input más pequeño */
+        width: 40%;
+        /* input más pequeño */
     }
 
     .input-email-btn-comenzar button {
-        width: auto; /* ancho automático según contenido */
-        margin: 0; /* eliminar margen superior */
+        width: auto;
+        /* ancho automático según contenido */
+        margin: 0;
+        /* eliminar margen superior */
     }
 }
 
-
 /* Desktop / pantallas grandes */
 @media (min-width: 1025px) {
+    nav {
+        padding: 0 9%;
+    }
+
+    .translate-login {
+        margin-top: 10px;
+    }
+
+    .translate-login .language-select {
+        margin-top: 15px;
+        padding: 10px;
+    }
+
+    .login-button {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    nav a img {
+        margin-top: 20px;
+        margin-right: 55px;
+        width: 190px;
+        /* logo más grande */
+    }
+
     .trending h2 {
         margin-top: 15px;
-        font-size: 24px;    /* opcional: título un poco más grande */
+        font-size: 24px;
+        /* opcional: título un poco más grande */
     }
 
     .input-group {
-        width: 40%;            /* input más pequeño */
+        width: 40%;
+        /* input más pequeño */
     }
 
 }

@@ -46,6 +46,7 @@ const translations = {
     velocity_test: "Prueba de velocidad",
     legal: "Avisos legales",
     only_netflix: "Solo en Netflix",
+    btn_comenzar: "Comenzar ya ➜",
   },
   en: {
     login_button: "Sign In",
@@ -94,23 +95,28 @@ const translations = {
     velocity_test: "Test Speed",
     legal: "Legal Notices",
     only_netflix: "Only on Netflix",
+    btn_comenzar: "Start now ➜",
   },
 };
 
 // Función para cambiar idioma
 function setLanguage(lang) {
+  // 1. Traducir textos fijos de la UI
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.getAttribute("data-i18n");
     if (translations[lang][key]) {
       el.textContent = translations[lang][key];
     }
   });
+
+  // 2. Volver a pedir datos dinámicos a TMDB
+  loadTrending(lang);
 }
 
 // Inicializar select
 const languageSelect = document.getElementById("language");
 
-// Si quieres que recuerde la selección
+// Guardar/recuperar idioma
 const savedLang = localStorage.getItem("lang") || "es";
 setLanguage(savedLang);
 languageSelect.value = savedLang;
@@ -121,3 +127,4 @@ languageSelect.addEventListener("change", (e) => {
   setLanguage(lang);
   localStorage.setItem("lang", lang);
 });
+

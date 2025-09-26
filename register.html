@@ -14,7 +14,7 @@
     <div class="navbar-info">
         <!-- Nabvar -->
         <nav>
-            <a href="/"><img src="/assets/images/netflix_logo.png" alt="Netflix Logo" style="height: 50px;"></a>
+            <a href="/"><img src="/assets/images/netflix_logo.png" alt="Netflix Logo""></a>
 
             <div class="translate-login">
                 <!-- Select -->
@@ -23,7 +23,6 @@
                     <option value="es">Español</option>
                     <option value="en">English</option>
                 </select>
-
 
                 <!-- Btn Iniciar Sesión -->
                 <a href="/login" class="login-button" data-i18n="login_button"></a>
@@ -526,6 +525,16 @@
             Esta página está protegida por Google reCAPTCHA para comprobar que no eres un robot.
             <a href="#">Más info.</a>
         </p>
+    </div>
+
+    <!-- Modal (compatible con tu estructura) -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <button class="close-btn" id="closeBtn">×</button>
+            <div id="modal-body">
+                <!-- Contenido dinámico aquí -->
+            </div>
+        </div>
     </div>
 
     <script src="/app.js"></script>
