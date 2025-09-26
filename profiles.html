@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Elegir perfil</title>
+  <style>
+    body {
+      background: #141414;
+      color: #fff;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+    .profiles {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+      gap: 20px;
+    }
+    .profile {
+      cursor: pointer;
+      width: 120px;
+    }
+    .profile img {
+      width: 100%;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h1>¿Quién está viendo?</h1>
+  <div class="profiles" id="profiles"></div>
+
+  <script>
+    const user = JSON.parse(localStorage.getItem("pb_user") || "{}");
+    if (!user.email) {
+      window.location.href = "index.html"; // Si no hay sesión → vuelve a login
+    }
+
+    const profilesDiv = document.getElementById("profiles");
+
+    // Un solo perfil por ahora (el user logueado)
+    const profile = document.createElement("div");
+    profile.classList.add("profile");
+    profile.innerHTML = `
+      <img src="https://ui-avatars.com/api/?name=${user.name}&background=E50914&color=fff" />
+      <p>${user.name}</p>
+    `;
+    profile.onclick = () => {
+      window.location.href = "home.html"; // llevar al home
+    };
+
+    profilesDiv.appendChild(profile);
+  </script>
+</body>
+</html>
