@@ -19,29 +19,29 @@
             <div class="translate-login">
                 <!-- Select -->
                 <select id="language" class="language-select">
-                    <option value="" selected hidden></option>
+                    <!-- <option value="" selected hidden></option> -->
                     <option value="es">Español</option>
                     <option value="en">English</option>
                 </select>
 
 
                 <!-- Btn Iniciar Sesión -->
-                <a href="/login" class="login-button">Iniciar Sesión</a>
+                <a href="/login" class="login-button" data-i18n="login_button"></a>
             </div>
         </nav>
 
         <!-- Info -->
         <div class="info">
-            <h2>Películas y series ilimitadas y mucho más</h2>
-            <p>A partir de $ 18.900. Cancela cuando quieras.</p>
-            <p>¿Quieres ver Netflix ya? Ingresa tu email para crear una cuenta o reiniciar tu membresía de Netflix.</p>
+            <h2 data-i18n="peliculas_series_text"></h2>
+            <p data-i18n="cancela_title"></p>
+            <p data-i18n="ingresar_email_text"></p>
 
             <div class="input-email-btn-comenzar">
                 <div class="input-group">
                     <input type="text" id="email" required placeholder=" ">
                     <label for="email">Email</label>
                 </div>
-                <button>Comenzar ></button>
+                <button data-i18n="btn_start"></button>
             </div>
 
         </div>
@@ -50,7 +50,7 @@
     <!-- CURVA Y TENDENCIAS -->
     <div class="curve-container">
         <section class="trending">
-            <h2>Tendencias</h2>
+            <h2 data-i18n="trending_title"></h2>
             <div class="slider-container" id="slider-container">
                 <ul class="slider" id="trending-list"></ul>
             </div>
@@ -58,13 +58,13 @@
     </div>
 
     <!-- MOTIVOS -->
-    <h2 class="text-motivos">Más motivos para unirte</h2>
+    <h2 class="text-motivos" data-i18n="motivos_title"></h2>
     <div class="motivos">
         <!-- #1 Card -->
         <div class="card">
             <div class="card-content">
-                <span>Disfruta en tu TV</span>
-                <p>Ve en smart TV, PlayStation, Xbox, Chromecast, Apple TV, reproductores de Blu-ray y más.</p>
+                <span data-i18n="disfruta_text"></span>
+                <p data-i18n="ver_dispositivos"></p>
                 <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
                     <g id="television-core-small">
                         <path id="Vector" fill-rule="evenodd" clip-rule="evenodd"
@@ -137,8 +137,8 @@
         <!-- #2 Card -->
         <div class="card">
             <div class="card-content">
-                <span>Descarga tus series para verlas offline</span>
-                <p>Guarda tu contenido favorito y siempre tendrás algo para ver.</p>
+                <span data-i18n="descarga_text"></span>
+                <p data-i18n="guarda_text"></p>
                 <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
                     <g id="download-core-small">
                         <path id="Vector"
@@ -215,8 +215,8 @@
         <!-- #3 Card -->
         <div class="card">
             <div class="card-content">
-                <span>Disfruta donde quieras</span>
-                <p>Películas y series ilimitadas en tu teléfono, tablet, laptop y TV.</p>
+                <span data-i18n="disfruta_any"></span>
+                <p data-i18n="peliculas_series_ilimitadas"></p>
                 <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
                     <g id="telescope-core-small">
                         <path id="Vector"
@@ -312,9 +312,8 @@
         <!-- #4 Card -->
         <div class="card">
             <div class="card-content">
-                <span>Crea perfiles para niños</span>
-                <p>Los niños vivirán aventuras con sus personajes favoritos en un espacio diseñado exclusivamente para
-                    ellos, gratisc con su membresía.</p>
+                <span data-i18n="create_kids"></span>
+                <p data-i18n="create_kids_p"></p>
                 <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
                     <g id="profiles-core-small">
                         <path id="Vector"
@@ -427,117 +426,87 @@
 
     <!-- PREGUNTAS FRECUENTES -->
     <section class="faq">
-        <h2>Preguntas Frecuentes</h2>
+        <h2 data-i18n="preguntas_faq"></h2>
 
         <div class="faq-item">
-            <button class="faq-question">
-                ¿Qué es Netflix?
+            <button class="faq-question" data-i18n="btn_whats_netflix">
                 <img src="./assets/images/plus.png" alt="">
             </button>
-            <div class="faq-answer">
-                <p>Netflix es un servicio de streaming que ofrece una gran variedad de películas, series y documentales
-                    premiados en casi cualquier pantalla conectada a internet.
-
-                    Todo lo que quieras ver, sin límites ni comerciales, a un costo muy accesible. Siempre hay algo
-                    nuevo por descubrir, ¡y todas las semanas se agregan más películas y series!.</p>
+            <div class="faq-answer" data-i18n="ans_whats_netflix">
+                <p></p>
             </div>
         </div>
 
         <div class="faq-item">
-            <button class="faq-question">
-                ¿Cuánto cuesta Netflix?
+            <button class="faq-question" data-i18n="how_much_netflix">
                 <img src="./assets/images/plus.png" alt="">
             </button>
-            <div class="faq-answer">
-                <p>Disfruta Netflix en tu smartphone, tablet, smart TV, laptop o dispositivo de streaming, todo por una
-                    tarifa plana mensual. Planes desde $ 18.900 hasta $ 44.900 al mes. Sin costos adicionales ni
-                    contratos.
-                </p>
+            <div class="faq-answer" data-i18n="ans_how_much_netflix">
+                <p></p>
             </div>
         </div>
 
         <div class="faq-item">
-            <button class="faq-question">
-                ¿Dónde puedo ver Netflix?
+            <button class="faq-question" data-i18n="where_to_watch">
                 <img src="./assets/images/plus.png" alt="">
             </button>
-            <div class="faq-answer">
-                <p>Disfruta donde quieras, cuando quieras. Inicia sesión en tu cuenta de Netflix para ver contenido al
-                    instante a través de netflix.com desde tu computadora personal o en cualquier dispositivo con
-                    conexión a internet que cuente con la app de Netflix, como smart TV, smartphones, tablets,
-                    reproductores multimedia y consolas de juegos.
-
-                    Además, puedes descargar tus series favoritas con la app para iOS o Android. Con la función de
-                    descarga, puedes ver contenido donde vayas y sin conexión a internet. Lleva Netflix contigo adonde
-                    sea.
-                </p>
+            <div class="faq-answer" data-i18n="ans_where_to_watch">
+                <p></p>
             </div>
         </div>
 
         <div class="faq-item">
-            <button class="faq-question">
-                ¿Cómo cancelo?
+            <button class="faq-question" data-i18n="how_to_cancel">
                 <img src="./assets/images/plus.png" alt="">
             </button>
-            <div class="faq-answer">
-                <p>Netflix es flexible. Sin contratos molestos ni compromisos. Cancela la membresía online con solo dos
-                    clics. No hay cargos por cancelación. Empieza y termina cuando quieras.
-
-                </p>
+            <div class="faq-answer" data-i18n="ans_how_to_cancel">
+                <p></p>
             </div>
         </div>
 
         <div class="faq-item">
-            <button class="faq-question">
-                ¿Que puedo ver en Netflix?
+            <button class="faq-question" data-i18n="whats_watch_netflix">
                 <img src="./assets/images/plus.png" alt="">
             </button>
-            <div class="faq-answer">
-                <p>Netflix tiene un amplio catálogo de películas, series, documentales, animes, originales premiados y
-                    más. Todo lo que quieras ver, cuando quieras.
-                </p>
+            <div class="faq-answer" data-i18n="ans_whats_watch_netflix">
+                <p></p>
             </div>
         </div>
 
         <div class="faq-item">
-            <button class="faq-question">
-                ¿Es bueno Netflix para los niños?
+            <button class="faq-question" data-i18n="is_netflix_good_kids">
                 <img src="./assets/images/plus.png" alt="">
             </button>
-            <div class="faq-answer">
-                <p>La experiencia de Netflix para niños está incluida en la membresía para que los padres tengan el
-                    control mientras los peques disfrutan series y películas familiares en su propio espacio.
-
-                    Los perfiles para niños incluyen controles parentales protegidos por PIN que te permiten restringir
-                    el contenido que pueden ver los niños en función de la clasificación por edad y bloquear
-                    determinados títulos que no quieras que los niños vean.
-                </p>
+            <div class="faq-answer" data-i18n="ans_is_netflix_good_kids">
+                <p></p>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer class="footer">
-        <p class="footer-contact">¿Preguntas? Llama al <a href="tel:018005191570">01 800 519 1570</a></p>
+        <p class="footer-contact" data-i18n="number_text">
+        ¿Preguntas? Llama al <a href="tel:018005191570">01 800 519 1570</a>
+        </p>
 
         <ul class="footer-links">
-            <li><a href="#">Preguntas frecuentes</a></li>
-            <li><a href="#">Centro de ayuda</a></li>
-            <li><a href="#">Cuenta</a></li>
-            <li><a href="#">Prensa</a></li>
-            <li><a href="#">Relaciones con inversionistas</a></li>
-            <li><a href="#">Empleo</a></li>
-            <li><a href="#">Canjear tarjetas de regalo</a></li>
-            <li><a href="#">Comprar tarjetas de regalo</a></li>
-            <li><a href="#">Formas de ver</a></li>
-            <li><a href="#">Términos de uso</a></li>
-            <li><a href="#">Privacidad</a></li>
-            <li><a href="#">Preferencias de cookies</a></li>
-            <li><a href="#">Información corporativa</a></li>
-            <li><a href="#">Contáctanos</a></li>
-            <li><a href="#">Prueba de velocidad</a></li>
-            <li><a href="#">Avisos legales</a></li>
-            <li><a href="#">Solo en Netflix</a></li>
+            <li data-i18n="link_faq"></p><a href="#"></a></li>
+            <li data-i18n="help_center"></p><a href="#"></a></li>
+            <li data-i18n="account"></p><a href="#"></a></li>
+            <li data-i18n="newspaper"></p><a href="#"></a></li>
+            <li data-i18n="investor_relations"></p><a href="#"></a></li>
+            <li data-i18n="jobs"></p><a href="#"></a></li>
+            <li data-i18n="gift_cards"></p><a href="#"></a></li>
+            <li data-i18n="buy_gift_cards"></p><a href="#"></a></li>
+            <li data-i18n="ways_to_watch"></p><a href="#"></a></li>
+            <li data-i18n="terms"></p><a href="#"></a></li>
+            <li data-i18n="privacy"></p><a href="#"></a></li>
+            <li data-i18n="cookies"></p><a href="#"></a></li>
+            <li data-i18n="corporate"></p><a href="#"></a></li>
+            <li data-i18n="contact"></p><a href="#"></a></li>
+            <li data-i18n="velocity_test"></p><a href="#"></a></li>
+            <li data-i18n="legal"></p><a href="#"></a></li>
+            <li data-i18n="only_netflix"></p><a href="#"></a></li>
         </ul>
     </footer>
 
@@ -560,5 +529,6 @@
     </div>
 
     <script src="/app.js"></script>
+    <script src="/translations.js"></script>
 </body>
 </html>

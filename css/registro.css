@@ -46,10 +46,11 @@ nav {
     -webkit-appearance: none;
     -moz-appearance: none;
 
-    background: #000 url("./../assets/images/translate.png") no-repeat center;
+    /* background: #000 url("./../assets/images/translate.png") no-repeat center; */
+    background-color: #000;
     background-size: 20px 20px;
 
-    width: 60px;
+    width: 6¿80px;
     padding: 8px;
     border: 1px solid #fff;
     border-radius: 4px;
