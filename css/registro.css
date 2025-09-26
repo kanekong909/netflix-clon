@@ -27,7 +27,7 @@
     background:
         linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
         /* overlay oscuro */
-        url("/assets/images/fondo.jpg") no-repeat center center / cover;
+        url("./assets/images/fondo.jpg") no-repeat center center / cover;
 
     color: white;
 }
