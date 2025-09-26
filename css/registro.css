@@ -707,6 +707,12 @@ p {
 
 /* Desktop / pantallas grandes */
 @media (min-width: 1025px) {
+    .info h2 {
+        font-size: 3.5rem;
+        text-align: center;
+        font-weight: bold;
+    }
+
     nav {
         padding: 0 9%;
     }
