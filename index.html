@@ -1,81 +1,13 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Netflix Clone - Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix Clone</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Netflix Clone</h1>
-
-  <!-- Registro -->
-  <form id="registerForm">
-    <h2>Registro</h2>
-    <input type="text" id="regName" placeholder="Nombre" required />
-    <input type="email" id="regEmail" placeholder="Email" required />
-    <input type="password" id="regPassword" placeholder="Contraseña" required />
-    <button type="submit">Registrarse</button>
-  </form>
-
-  <!-- Login -->
-  <form id="loginForm">
-    <h2>Login</h2>
-    <input type="email" id="loginEmail" placeholder="Email" required />
-    <input type="password" id="loginPassword" placeholder="Contraseña" required />
-    <button type="submit">Iniciar Sesión</button>
-  </form>
-
-  <script>
-    const BASE_URL = "http://127.0.0.1:8090";
-
-    // Registro
-    document.getElementById("registerForm").addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const name = document.getElementById("regName").value;
-      const email = document.getElementById("regEmail").value;
-      const password = document.getElementById("regPassword").value;
-
-      const res = await fetch(`${BASE_URL}/api/collections/users/records`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email: email,
-          password: password,
-          passwordConfirm: password,
-          name: name
-        })
-      });
-      const data = await res.json();
-      console.log("Usuario creado:", data);
-      alert("Registro exitoso, ahora inicia sesión.");
-    });
-
-    // Login
-    document.getElementById("loginForm").addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const email = document.getElementById("loginEmail").value;
-      const password = document.getElementById("loginPassword").value;
-
-      const res = await fetch(`${BASE_URL}/api/collections/users/auth-with-password`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          identity: email,
-          password: password
-        })
-      });
-      const data = await res.json();
-
-      if (data?.token) {
-        localStorage.setItem("pb_token", data.token);
-        localStorage.setItem("pb_user", JSON.stringify(data.record));
-        console.log("Login correcto:", data);
-        alert(`Bienvenido ${data.record.name}!`);
-        // Aquí lo mandas a profiles.html
-        window.location.href = "profiles.html";
-      } else {
-        alert("Error al iniciar sesión.");
-      }
-    });
-  </script>
+  <h1>Welcome to the Netflix Clone</h1>
+  <a href="/register.html">Ir al registro</a>
 </body>
 </html>
