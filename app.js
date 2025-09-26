@@ -83,7 +83,6 @@ function showModal(movie, lang = "es") {
   modal.classList.add("show");
 }
 
-
 // Event listeners (iguales a tu implementación)
 closeBtn.addEventListener("click", () => {
   modal.classList.remove("show");
